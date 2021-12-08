@@ -1,0 +1,234 @@
+from random import randint
+from time import sleep
+
+
+# Lista pra updates:
+# delay nas ações
+# Cortar madeira
+# novo 'mundo'
+
+jogo = 0
+
+xpm = 0
+xpc = 0
+xpf = 0
+
+ferro = 0
+banana = 0
+
+enchada = 0
+
+print('Bem Vindo aventureiro, aqui voce encontrara o melhor RPG de texto da sua vida!')
+print('WIP:Build 0.5')
+nome = str(input('Primeiramente diga-me, qual o seu nome aventureiro?'))
+print(f'Uau! {nome} é um nome incrivel!')
+sleep(1)
+
+while jogo == 0:
+
+    print('''Para realizar uma ação basta dizer oque quer fazer!
+Aqui vai uma lista do que voce pode fazer
+    
+    
+    Minerar        -- M
+    Cortar Madeira -- C [Ainda não Funciona]
+    Fazendinha     -- F
+    Inventario     -- I
+    Craft          -- G''')
+    print(' ')
+
+    acao = str(input('O que quer fazer? :')).strip().upper()
+
+    if acao == 'M':
+
+        #       lvl 4 de mine
+        if xpm > 1000:
+            print(' ')
+            print('Minerando.')
+            print('Minerando..')
+            print('Minerando...')
+            xpm += 100
+            ferro += 4
+            print(' ')
+            print(f'''+100xp
++4 ferros
+Ferros: {ferro}''')
+            print(' ')
+
+        #       lvl 3 de minepp
+        elif xpm > 300:
+            print(' ')
+            print('Minerando.')
+            sleep(1)
+            print('Minerando..')
+            sleep(1)
+            print('Minerando...')
+            xpm += 100
+            ferro += 3
+            print(' ')
+            print(f'''+100xp
++3 ferros
+Ferros: {ferro}''')
+            print(' ')
+
+        #        lvl 2 de mine
+        elif xpm >= 100:
+            print(' ')
+            print('Minerando.')
+            sleep(2)
+            print('Minerando..')
+            sleep(2)
+            print('Minerando...')
+            xpm += 70
+            ferro += 2
+            print(' ')
+            print(f'''+70xp
++2 ferros
+Ferros: {ferro}''')
+            print(' ')
+
+
+#        lvl 1 de mine
+        else:
+            print(' ')
+            print('Minerando.')
+            sleep(3)
+            print('Minerando..')
+            sleep(3)
+            print('Minerando...')
+            xpm += 50
+            ferro += 1
+            print(' ')
+            print(f'''+50xp
++1 ferros
+Ferros: {ferro}''')
+
+        if xpm < 100:
+            print(f'level 1 {xpm}/100')
+            print(' ')
+        elif xpm >= 1000:
+            print(f'level 4 {xpm}/xxx')
+            print(' ')
+        elif xpm >= 300:
+            print(f'level 3 {xpm}/1000')
+            print(' ')
+        elif xpm >= 100:
+            print(f'level 2 {xpm}/300')
+            print(' ')
+
+
+    elif acao == 'C':
+        print('ainda n da pra cortar madeira :(')
+    elif acao == 'F':
+        if enchada >= 1:
+            if xpf > 1000:
+                print(' ')
+                print('Farmando.')
+                sleep(0.2)
+                print('Farmando..')
+                sleep(0.2)
+                print('Farmando...')
+                xpf += 100
+                banana += 4
+                print(' ')
+                print(f'''+100xp
++4 bananas
+bananas: {banana}''')
+            if xpf > 300:
+                print(' ')
+                print('Farmando.')
+                sleep(1)
+                print('Farmando..')
+                sleep(1)
+                print('Farmando...')
+                xpf += 100
+                banana += 3
+                print(' ')
+                print(f'''+100xp
++3 bananas
+bananas: {banana}''')
+            if xpf >= 100:
+                print(' ')
+                print('Farmando.')
+                sleep(2)
+                print('Farmando..')
+                sleep(2)
+                print('Farmando...')
+                xpf += 70
+                banana += 2
+                print(' ')
+                print(f'''+70xp
++2 bananas
+bananas: {banana}''')
+            else:
+                print(' ')
+                print('Farmando.')
+                sleep(3)
+                print('Farmando..')
+                sleep(3)
+                print('Farmando...')
+                xpf += 50
+                banana += 1
+                print(' ')
+                print(f'''+50xp
++1 bananas
+bananas: {banana}''')
+            if xpf < 100:
+                print(f'level 1 {xpf}/100')
+                print(' ')
+            elif xpf >= 1000:
+                print(f'level 4 {xpf}/xxx')
+                print(' ')
+            elif xpf >= 300:
+                print(f'level 3 {xpf}/1000')
+                print(' ')
+            elif xpf >= 100:
+                print(f'level 2 {xpf}/300')
+                print(' ')
+
+        else:
+            print(' ')
+            print('Voce precisa de uma enchada de ferro para farmar bananas!')
+            print(' ')
+
+
+    elif acao == 'G':
+        print(' ')
+        print('O que deseja craftar?')
+        print(' ')
+        print(' * ' * 10)
+        print('[ 1 ] Enchada de ferro -- 10 Ferros')
+        print('[ 2 ] Sucão de banana(NÃO FUNCIONA)')
+        print(' * ' * 10)
+        print(' ')
+        craft = str(input('>>>'))
+
+        if craft == '1':
+            if ferro >= 10:
+                ferro -= 10
+                enchada += 1
+                print(' ')
+                print('Agora voce pode colher bananas')
+                print(' ')
+            else:
+                print(' ')
+                print('Voce precisa de 10 ferros para poder craftar isso!')
+                print(' ')
+        else:
+            print(' ')
+            print('Voce Não pode craftar isso!')
+            print(' ')
+
+
+    elif acao == 'I':
+        print(' ')
+        print(' * ' * 10)
+        print(f'Ferro:{ferro}  '
+              f'Banana:{banana}')
+        print(' * ' * 10)
+
+        print(' ')
+    else:
+        print(' ')
+        print(f'Desculpe {nome}, essa ainda não é uma acão possivel no jogo')
+        print(' ')
